@@ -14,9 +14,7 @@ RUN addgroup -S $GROUPNAME && adduser -S $USERNAME -G $GROUPNAME \
 USER $USERNAME
 
 RUN npm install --unsafe-perm=true
-RUN npm install -g tsc \
-    && npm install -g concurrently \
-    && npm install -g typescript \
+RUN npm install -g typescript \
     && npm config set prefix $SOURCE_DIR/.npm-global \
     && export PATH=$SOURCE_DIR/.npm-global:$PATH \
     && npm i -g aws-cdk typescript \
